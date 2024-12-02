@@ -1,7 +1,7 @@
 
 abstract class Funcionario {
     private nome: string;
-    private salario: number;
+    public salario: number;
 
     constructor(nome: string, salario: number) {
         this.nome = nome;
@@ -16,7 +16,7 @@ abstract class Funcionario {
         return this.salario + this.calcularBonus();
     }
 
-    
+   
     public exibirInformacoes(): void {
         console.log(`Nome: ${this.nome}`);
         console.log(`Salário: R$ ${this.salario.toFixed(2)}`);
@@ -44,7 +44,7 @@ class Operario extends Funcionario {
         super(nome, salario);
     }
 
-    
+   
     public calcularBonus(): number {
         return this.salario * 0.05; 
     }
